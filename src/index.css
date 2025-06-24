@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Global gradient background - SINGLE SOURCE */
+html, body, #root {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg, 
+    rgb(10, 14, 26) 0%,     /* #0A0E1A - Almost black blue */
+    rgb(11, 26, 46) 25%,    /* #0B1A2E - Your almost black blue */
+    rgb(15, 20, 25) 50%,    /* #0F1419 - Slightly lighter */
+    rgb(11, 26, 46) 75%,    /* Back to almost black blue */
+    rgb(10, 14, 26) 100%    /* Back to darkest */
+  ) fixed;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove cursor pointer from Canvas */
+canvas {
+  cursor: default !important;
+}
+
+/* Ensure all sections are transparent */
+section, div {
+  background: transparent !important;
+}
+
+/* Override any conflicting backgrounds */
+#hero, #about {
+  background: transparent !important;
+}
+
+
+/* Enhanced gradient animation keyframes */
+@keyframes gradient-shift-hover {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.hero-title:hover {
+  animation: gradient-shift-hover 1s ease-in-out;
+}
+
+/* Optional: Add glow effect on hover */
+.hero-title {
+  transition: all 0.3s ease;
+}
+
+.hero-title:hover {
+  filter: drop-shadow(0 0 20px rgba(20, 184, 166, 0.4));
+}
+

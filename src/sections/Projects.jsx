@@ -370,7 +370,7 @@ const Projects = () => {
             className="text-center mt-16"
           >
             <motion.a
-              href="https://github.com/yourusername"
+              href="https://github.com/pragy10"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-slate-800 to-slate-700 hover:from-teal-500 hover:to-cyan-600 text-white rounded-2xl transition-all duration-300 border border-slate-600 hover:border-teal-500"

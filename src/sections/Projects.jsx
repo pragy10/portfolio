@@ -72,6 +72,18 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "MIDSight",
+      description: "Modern, modular Linux security CLI with process, file, network, honeytoken, and threat intel monitoring—featuring AI-powered insights and reporting via Google Gemini.",
+      category: ["AI/ML", "Security","CLI"],
+      tech: ["Python", "rich","psutil"],
+      image: "/api/placeholder/400/250",
+      github: "https://github.com/pragy10/midsight",
+      demo: "",
+      stars: 42,
+      featured: true
+    },
+    {
+      id: 2,
       title: "phishPicket - Advanced Phishing URL Detection System",
       description: "Machine learning system to classify URLs as phishing or safe using URL features and SSL info. Built a web interface for analysis and alerts.",
       category: ["AI/ML", "Security","Web Development"],
@@ -83,7 +95,7 @@ const Projects = () => {
       featured: true
     },
     {
-      id: 2,
+      id: 3,
       title: "Facial Recognition Using Siamese Neural Networks",
       description: "Facial recognition model using Siamese networks to compare and verify faces based on similarity learning.",
       category: "AI/ML",
@@ -94,7 +106,7 @@ const Projects = () => {
       featured: true
     },
     {
-      id: 3,
+      id: 4,
       title: "Movie Recommendation System",
       description: "Collaborative filtering model using PyTorch to recommend movies based on user preferences from MovieLens data.",
       category: ["Data Science", "AI/ML"],
@@ -105,7 +117,7 @@ const Projects = () => {
       featured: false
     },
     {
-      id: 4,
+      id: 5,
       title: "VPS Hosting Platform Using OpenStack (Ongoing)",
       description: "Developed a virtual private server hosting service by deploying and managing virtual machines through OpenStack",
       category: ["Security","DevOps"],
@@ -116,7 +128,7 @@ const Projects = () => {
       featured: false
     },
     {
-      id: 4,
+      id: 6,
       title: "vehnicate Mobile App UI/UX",
       description: "Developed a Figma design for a mobile app for a startup - vehnicate",
       category: ["UI/UX"],
@@ -128,7 +140,7 @@ const Projects = () => {
     },
   ];
 
-  const categories = ['All', 'AI/ML', 'Web Development', 'Data Science', 'Security', 'DevOps', 'UI/UX'];
+  const categories = ['All', 'AI/ML', 'Web Development', 'Data Science', 'Security', 'DevOps', 'UI/UX',"CLI"];
 
   const filteredProjects = selectedCategory === 'All' 
   ? projects 
@@ -166,6 +178,7 @@ const Projects = () => {
       'MongoDB': 'bg-green-500/20 text-green-400 border-green-500/30',     // MongoDB green
       'PostgreSQL': 'bg-blue-700/20 text-blue-400 border-blue-700/30',     // PostgreSQL blue
       'MySQL': 'bg-orange-600/20 text-orange-400 border-orange-600/30',    // MySQL orange
+      'SQLite': 'bg-orange-700/20 text-orange-300 border-orange-700/30',
       
       // AI/ML
       'TensorFlow': 'bg-orange-500/20 text-orange-400 border-orange-500/30', // TensorFlow orange
@@ -175,6 +188,12 @@ const Projects = () => {
       'OpenCV': 'bg-green-600/20 text-green-400 border-green-600/30',      // OpenCV green
       'Pandas': 'bg-purple-500/20 text-purple-400 border-purple-500/30',   // Pandas purple
       'NumPy': 'bg-blue-600/20 text-blue-400 border-blue-600/30',          // NumPy blue
+      'Google Gemini': 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30',
+
+      'click':         'bg-green-600/20 text-green-300 border-green-600/30',     // click green
+      'rich':          'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',        // rich cyan
+      'pyfiglet':      'bg-pink-600/20 text-pink-200 border-pink-600/30',        // pyfiglet pink
+      'pwinput':       'bg-gray-700/20 text-gray-300 border-gray-700/30',        // pwinput gray
       
       // Cloud & DevOps
       'AWS': 'bg-orange-500/20 text-orange-400 border-orange-500/30',      // AWS orange

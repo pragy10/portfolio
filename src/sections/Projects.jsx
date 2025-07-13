@@ -3,6 +3,12 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Stars } from '@react-three/drei';
 import { motion, useInView } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiStar, FiCode } from 'react-icons/fi';
+import midsightImg from '../assets/midsight.png'
+import phishImg from '../assets/phish.png'
+import facialImg from '../assets/facial.png'
+import movieImg from '../assets/movie.png'
+import vpsImg from '../assets/vps.png'
+import hnappImg from '../assets/hnapp.png'
 
 // Simple floating geometric element (no complex animations)
 const FloatingGeometry = ({ position, geometry = 'box', delay = 0 }) => {
@@ -76,7 +82,7 @@ const Projects = () => {
       description: "Modern, modular Linux security CLI with process, file, network, honeytoken, and threat intel monitoring—featuring AI-powered insights and reporting via Google Gemini.",
       category: ["AI/ML", "Security","CLI"],
       tech: ["Python", "rich","psutil"],
-      image: "/api/placeholder/400/250",
+      image: midsightImg,
       github: "https://github.com/pragy10/midsight",
       demo: "https://www.linkedin.com/posts/pragya-sekar_hey-connections-excited-to-share-my-latest-activity-7349886521941893123-Wb4v?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEZmh70BgIDOruQqVpYagLhRYNnN_nVI3PI",
       stars: 42,
@@ -88,7 +94,7 @@ const Projects = () => {
       description: "Machine learning system to classify URLs as phishing or safe using URL features and SSL info. Built a web interface for analysis and alerts.",
       category: ["AI/ML", "Security","Web Development"],
       tech: ["Python", "PyTorch", "FastAPI", "Flask"],
-      image: "/api/placeholder/400/250",
+      image: phishImg,
       github: "https://github.com/pragy10/phishPicket",
       demo: "https://www.linkedin.com/posts/pragya-sekar_cybersecurity-machinelearning-phishingdetection-activity-7332725758550843392-WTie?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEZmh70BgIDOruQqVpYagLhRYNnN_nVI3PI",
       stars: 42,
@@ -100,7 +106,7 @@ const Projects = () => {
       description: "Facial recognition model using Siamese networks to compare and verify faces based on similarity learning.",
       category: "AI/ML",
       tech: ["Python","TensorFlow", "OpenCV"],
-      image: "/api/placeholder/400/250",
+      image: facialImg,
       github: "https://github.com/pragy10/ML_projects/blob/main/facialrecognition.ipynb",
       stars: 30,
       featured: true
@@ -111,7 +117,7 @@ const Projects = () => {
       description: "Collaborative filtering model using PyTorch to recommend movies based on user preferences from MovieLens data.",
       category: ["Data Science", "AI/ML"],
       tech: [ "Python", "PyTorch", "Pandas", "NumPy"],
-      image: "/api/placeholder/400/250",
+      image: movieImg,
       github: "https://github.com/pragy10/ML_projects/blob/main/movielens_pytorch.ipynb",
       stars: 25,
       featured: false
@@ -122,7 +128,7 @@ const Projects = () => {
       description: "Developed a virtual private server hosting service by deploying and managing virtual machines through OpenStack",
       category: ["Security","DevOps"],
       tech: ["Python", "Nmap", "React", "PostgreSQL"],
-      image: "/api/placeholder/400/250",
+      image: vpsImg,
       demo: "https://drive.google.com/file/d/1JW2z6uCiefr5X644RSC3EMbM3MqEaw4x/view?usp=sharing",
       stars: 38,
       featured: false
@@ -133,7 +139,7 @@ const Projects = () => {
       description: "Developed a Figma design for a mobile app for a startup - vehnicate",
       category: ["UI/UX"],
       tech: ["Figma","Canva"],
-      image: "/api/placeholder/400/250",
+      image: hnappImg,
       demo: "https://www.figma.com/proto/89ujvWNXqctFNZC6r0pB6W/hnAir_v2?node-id=6-23&starting-point-node-id=76%3A1827&t=8uALkT6cTuxo18f7-1",
       stars: 38,
       featured: false
@@ -321,9 +327,11 @@ const Projects = () => {
 
                 {/* Project Image */}
                 <div className="relative h-48 overflow-hidden rounded-t-3xl">
-                  <div className="w-full h-full bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center">
-                    <FiCode size={48} className="text-teal-400" />
-                  </div>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
                 </div>
 

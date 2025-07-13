@@ -78,7 +78,7 @@ const Projects = () => {
       tech: ["Python", "rich","psutil"],
       image: "/api/placeholder/400/250",
       github: "https://github.com/pragy10/midsight",
-      demo: "",
+      demo: "https://www.linkedin.com/posts/pragya-sekar_hey-connections-excited-to-share-my-latest-activity-7349886521941893123-Wb4v?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEZmh70BgIDOruQqVpYagLhRYNnN_nVI3PI",
       stars: 42,
       featured: true
     },

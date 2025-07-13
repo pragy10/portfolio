@@ -2,7 +2,10 @@ import React, { useState, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Box, Text } from '@react-three/drei';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronLeft, FiChevronRight, FiMapPin, FiCamera, FiCpu, FiTrendingUp, FiUsers, FiCode, FiEye, FiTarget, FiAward, FiCalendar } from 'react-icons/fi';
+import { GiNetworkBars } from "react-icons/gi";
+import { AiOutlineBarChart } from "react-icons/ai";
+import { MdLightMode } from "react-icons/md";
+import { FiZap, FiChevronLeft, FiChevronRight, FiMapPin, FiCamera, FiCpu, FiTrendingUp, FiUsers, FiCode, FiEye, FiTarget, FiAward, FiCalendar, FiActivity, FiGift, FiTv,  } from 'react-icons/fi';
 
 const FloatingCube = ({ position, color, rotationSpeed }) => {
   const meshRef = useRef();
@@ -32,7 +35,7 @@ const Experience = () => {
       type: "Hackathon",
       title: "Computer Vision Developer",
       company: "Urban Move Hackathon - CUMTA Chennai",
-      period: "2024 - Present",
+      period: "2025 - Present",
       status: "Shortlisted & Developing",
       description: "Leading object detection and quality assessment development for smart road infrastructure monitoring system.",
       achievements: [
@@ -54,15 +57,16 @@ const Experience = () => {
         "Video slice extraction & processing",
         "Quality assessment & data storage"
       ],
+      role: "CV Developer",
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-500/10"
     },
     {
       id: 2,
       type: "Startup",
-      title: "UI/UX Designer & Technical Advisor",
+      title: "UI/UX Designer & Technical Member",
       company: "Vehnicate",
-      period: "2024 - Present",
+      period: "2023 - Present",
       status: "Active Contributor",
       description: "Providing comprehensive design solutions and technical expertise for vehicle technology startup.",
       achievements: [
@@ -84,9 +88,74 @@ const Experience = () => {
         "Control system research",
         "Technical implementation guidance"
       ],
+      role: "UI/UX Designer, Technical Member",
       color: "from-purple-500 to-pink-500",
       bgColor: "bg-purple-500/10"
-    }
+    },
+     {
+      id: 3,
+      type: "Workshop",
+      title: "Machine Learning Instructor",
+      company: "Skill UP SEDS, SEDS Antariksh",
+      period: "July 5th 2025",
+      status: "Successfully completed",
+      description: "Co-hosted a 2.5 hour ML session, diving into two different real-world problem statements to give participants a smooth yet deep introduction on ML in space",
+      achievements: [
+        "Made AL Accessible to beginners, by carefully explaining concepts from basic to intermediate levels",
+        "Collaborated with fellow instructor to plan, split and teach technical content effectively",
+        "Empowered chapter members to explore ML and data-driven approaches in space applications",
+        "Taught advanced math like FFT and statistical methods like kurtosis and skewness through visualizations and their use in feature extraction"
+      ],
+      techStack: ["Python", "Google Colab","Time-Series Data Analysis", "Scipy", "Lightkurve", "Imblearn"],
+      highlights: [
+        { icon: FiActivity, text: "Fast Fourier Transform", color: "text-blue-400" },
+        { icon: GiNetworkBars, text: "SMOTE", color: "text-green-400" },
+        { icon: AiOutlineBarChart, text: "Statistical Measures", color: "text-purple-400" },
+        { icon: MdLightMode, text: "Lightkurve", color: "text-orange-400" }
+      ],
+      workflow: [
+        "Introduction to ML",
+        "Exploratory Data Analysis",
+        "Feature Extraction",
+        "Model Training",
+        "Inference with Lightkurve",
+      ],
+      role: "Instructor",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-500/10"
+    },
+    {
+      id: 4,
+      type: "Fellowship",
+      title: "CrftHQ Fellowship",
+      company: "CrftHQ",
+      period: "July 2025 - Present",
+      status: "Accepted & Building",
+      description: "Accepted into the CrftHQ Fellowship, a 60-day, student-led accelerator that empowers student builders to turn their ideas into impactful products, brands, and ventures.",
+      achievements: [
+        "Selected as a CrftHQ Fellow from a competitive pool of student entrepreneurs across 25+ campuses.",
+        "Participating in a hands-on, four-phase program: Ideation, Validation, MVP, and Go-To-Market.",
+        "Collaborating with an inspiring community of student builders and mentors to bring ideas to life.",
+        "Gaining access to mentorship, tech credits, and real-world startup exposure."
+      ],
+      techStack: ["YOLO", "Computer Vision", "Python", "ESP32", "Real-time Processing", "Geospatial Analysis", "Path planning", "Control Systems"],
+      highlights: [
+        { icon: FiZap, text: "60-day creator journey", color: "text-blue-400" },
+        { icon: FiGift, text: "Access to ₹92.6 Cr+ in tech credits & perks", color: "text-green-400" },
+        { icon: FiUsers, text: "Mentorship from IIT/IIM grads, Fortune 500 pros, and founders", color: "text-purple-400" },
+        { icon: FiTv, text: "24-hour televised finale with investors & VCs", color: "text-orange-400" }
+      ],
+      workflow: [
+        "Ideation",
+        "Validation",
+        "MVP",
+        "Go-To-Market"
+      ],
+      role: "Fellow",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-500/10"
+    },
+
   ];
 
   const nextCard = () => {
@@ -298,7 +367,7 @@ const Experience = () => {
                           </div>
                           <div className="flex justify-between text-sm">
                             <span className="text-gray-400">Team Role</span>
-                            <span className="text-white font-medium">Lead Developer</span>
+                            <span className="text-white font-medium">{experiences[activeCard].role}</span>
                           </div>
                           <div className="flex justify-between text-sm">
                             <span className="text-gray-400">Technologies</span>

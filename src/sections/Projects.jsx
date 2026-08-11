@@ -119,7 +119,7 @@ const Projects = () => {
       category: ["AI/ML", "Full Stack"],
       tech: ["FastAPI", "React", "PostgreSQL", "Google Gemini API", "ChromaDB", "SQLGlot", "Python", "JavaScript"],
       image: querycraftImg,
-      demo: "https://github.com/pragy10/HPE_49",
+      github: "https://github.com/pragy10/HPE_49",
       stars: 0,
       featured: true
     },

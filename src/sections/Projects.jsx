@@ -9,6 +9,7 @@ import facialImg from '../assets/facial.png'
 import movieImg from '../assets/movie.png'
 import vpsImg from '../assets/vps.png'
 import hnappImg from '../assets/hnapp.png'
+import querycraftImg from '../assets/querycraft.jpeg'
 
 // Simple floating geometric element (no complex animations)
 const FloatingGeometry = ({ position, geometry = 'box', delay = 0 }) => {
@@ -113,14 +114,14 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Movie Recommendation System",
-      description: "Collaborative filtering model using PyTorch to recommend movies based on user preferences from MovieLens data.",
-      category: ["Data Science", "AI/ML"],
-      tech: [ "Python", "PyTorch", "Pandas", "NumPy"],
-      image: movieImg,
-      github: "https://github.com/pragy10/ML_projects/blob/main/movielens_pytorch.ipynb",
-      stars: 25,
-      featured: false
+      title: "QueryCraft – Text-to-SQL Performance Generator",
+      description: "Enterprise Text-to-SQL GenAI platform enabling natural language querying of server telemetry with automated reports and semantic caching.",
+      category: ["AI/ML", "Full Stack"],
+      tech: ["FastAPI", "React", "PostgreSQL", "Google Gemini API", "ChromaDB", "SQLGlot", "Python", "JavaScript"],
+      image: querycraftImg,
+      demo: "https://github.com/pragy10/HPE_49",
+      stars: 0,
+      featured: true
     },
     {
       id: 5,

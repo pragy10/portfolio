@@ -6,67 +6,61 @@ import * as THREE from 'three';
 const ComputerModel = ({ position = [0, 0, 0] }) => {
   const computerRef = useRef();
   
-  try {
-    // Load GLB model with error handling
-    const gltf = useGLTF('/models/computer.glb');
-    
-    useEffect(() => {
-      if (gltf && gltf.scene) {
-        console.log('GLB loaded successfully');
+  // Load GLB model with error handling
+  const gltf = useGLTF('/models/computer.glb');
+  
+  useEffect(() => {
+    if (gltf && gltf.scene) {
+      console.log('GLB loaded successfully');
+      
+      // Clone the scene to avoid issues
+      const scene = gltf.scene.clone();
+      
+      // Scale the model safely
+      if (scene) {
+        scene.scale.setScalar(0.5);
         
-        // Clone the scene to avoid issues
-        const scene = gltf.scene.clone();
-        
-        // Scale the model safely
-        if (scene) {
-          scene.scale.setScalar(0.5);
-          
-          // Apply materials and shadows safely
-          scene.traverse((child) => {
-            if (child.isMesh) {
-              child.castShadow = true;
-              child.receiveShadow = true;
-              
-              if (child.material) {
-                child.material.needsUpdate = true;
-              }
+        // Apply materials and shadows safely
+        scene.traverse((child) => {
+          if (child.isMesh) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+            
+            if (child.material) {
+              child.material.needsUpdate = true;
             }
-          });
-          
-          console.log('Model setup complete');
-        }
+          }
+        });
+        
+        console.log('Model setup complete');
       }
-    }, [gltf]);
+    }
+  }, [gltf]);
 
-    useFrame((state) => {
-      if (computerRef.current) {
-        const time = state.clock.elapsedTime;
-        computerRef.current.position.y = position[1] + Math.sin(time * 0.5) * 0.2;
-        computerRef.current.rotation.y = Math.sin(time * 0.3) * 0.05;
-      }
-    });
+  useFrame((state) => {
+    if (computerRef.current) {
+      const time = state.clock.elapsedTime;
+      computerRef.current.position.y = position[1] + Math.sin(time * 0.5) * 0.2;
+      computerRef.current.rotation.y = Math.sin(time * 0.3) * 0.05;
+    }
+  });
 
-    return (
-      <Float speed={1} rotationIntensity={0.1} floatIntensity={0.2}>
-        <group ref={computerRef} position={position} scale={0.92}>
-          {gltf?.scene && <primitive object={gltf.scene.clone()} />}
-          
-          <Text
-            position={[3, -2, 0]}
-            fontSize={0.3}
-            color="#5eead4"
-            anchorX="center"
-            anchorY="middle"
-          >
-          </Text>
-        </group>
-      </Float>
-    );
-    
-  } catch (error) {
-    console.error('Error in ComputerModel:', error);
-    return <ComputerModelFallback position={position} />;
-  }
+  return (
+    <Float speed={1} rotationIntensity={0.1} floatIntensity={0.2}>
+      <group ref={computerRef} position={position} scale={0.92}>
+        {gltf?.scene && <primitive object={gltf.scene.clone()} />}
+        
+        <Text
+          position={[3, -2, 0]}
+          fontSize={0.3}
+          color="#5eead4"
+          anchorX="center"
+          anchorY="middle"
+        >
+        </Text>
+      </group>
+    </Float>
+  );
 };
 
 // Safe fallback component

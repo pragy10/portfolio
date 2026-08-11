@@ -78,7 +78,6 @@ const About = () => {
 
   const skills = useMemo(() => [
     "Machine Learning",
-    "Cybersecurity", 
     "Cloud Computing",
     "React Development",
     "Python",
@@ -176,25 +175,21 @@ const About = () => {
 
             <motion.div variants={itemVariants} className="space-y-6">
               <motion.p 
-                className="text-lg text-gray-300 leading-relaxed"
-                whileHover={{ color: "#e5e7eb" }}
-                transition={{ duration: 0.2 }}
+                className="text-lg text-gray-300 leading-relaxed hover:text-gray-200 transition-colors duration-200"
               >
                 {personalInfo.bio}
               </motion.p>
               
               <motion.p 
-                className="text-lg text-gray-300 leading-relaxed"
-                whileHover={{ color: "#e5e7eb" }}
-                transition={{ duration: 0.2 }}
+                className="text-lg text-gray-300 leading-relaxed hover:text-gray-200 transition-colors duration-200"
               >
                 Currently pursuing my B.Tech in Computer Science Engineering at VIT Chennai with a CGPA of{' '}
                 <motion.span 
-                  className="text-teal-400 font-bold text-xl"
-                  whileHover={{ scale: 1.1, color: "#5eead4" }}
+                  className="text-teal-400 font-bold text-xl hover:text-teal-300 transition-colors"
+                  whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  9.07
+                  9.26
                 </motion.span>
                 . I'm passionate about exploring the intersection of technology and innovation.
               </motion.p>
@@ -214,7 +209,7 @@ const About = () => {
                 </h3>
                 <p className="text-gray-300 font-medium">B.Tech Computer Science</p>
                 <p className="text-gray-400">VIT Chennai</p>
-                <p className="text-teal-300 font-semibold">CGPA: 9.07</p>
+                <p className="text-teal-300 font-semibold">CGPA: 9.26</p>
               </motion.div>
               
               <motion.div 

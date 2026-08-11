@@ -191,7 +191,7 @@ const TechStack = () => {
               className="text-xl text-gray-300 mt-8 max-w-4xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
-              A Comprehensive Collection of Technical Skills garnered throughout my 2 years experience. 
+              A Comprehensive Collection of Technical Skills garnered throughout my 3 years experience. 
             </motion.p>
             <motion.div 
               className="w-32 h-1 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full mx-auto"
